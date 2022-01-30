@@ -15,7 +15,7 @@ Step 3: Download the demo model from [here](https://unomail-my.sharepoint.com/:u
 Step 4: Run the "UserApp/userApp.py" on the user device(s). You may need to compile the "HyperplaneHash.so" to run the "userApp.py". 
 
 
-Note: to run the prototype with other datasets, first, split the dataset using "split_dataset/split_dataset.py" and then put the smaller datasets to each user app directory.
+Note: to run the prototype with other datasets, first split the dataset using "split_dataset/split_dataset.py" and then put the smaller datasets to each user app directory.
 
 ## Simulation: 
 Run the "ndnSIM/reuse.cpp". To simplify the simulation, we used pre-processed data. All the pre-processed data is in the "ndnSIM/apps/simulation_data_preprocessed" directory. To select any specific dataset with a specific similarity threshold, change the "dataFilePath" variable in the "reuseConsumer.cpp". 
