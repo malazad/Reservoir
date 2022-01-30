@@ -1,0 +1,5 @@
+26,AR_multiple/5/toystorymovVGA_00057.jpg,2444450121,100,endline,
+241,AR_multiple/2/chrisbrownmovVGA_00084.jpg,2516277593,85,AR_multiple/2/chrisbrownmovVGA_00083.jpg,4,endline,
+273,AR_multiple/2/chrisbrownmovVGA_00020.jpg,3585235289,82,AR_multiple/2/chrisbrownmovVGA_00016.jpg,8,AR_multiple/2/chrisbrownmovVGA_00021.jpg,4,AR_multiple/2/chrisbrownmovVGA_00019.jpg,4,AR_multiple/2/chrisbrownmovVGA_00018.jpg,6,endline,
+319,AR_multiple/2/chrisbrownmovVGA_00040.jpg,3589425481,82,endline,
+ENDofTXT, ENDofTXT, 

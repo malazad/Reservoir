@@ -1,0 +1,111 @@
+router
+
+
+CN0     NA  1   1
+CN1     NA  1   1
+CN2     NA  1   1
+CN3     NA  1   1
+CN4     NA  1   1
+CN5     NA  1   1
+EN0     NA  1   1
+CN6     NA  1   1
+8     NA  1   1
+9     NA  1   1
+10     NA  1   1
+11     NA  1   1
+EN2     NA  1   1
+EN4     NA  1   1
+EN6     NA  1   1
+EN7     NA  1   1
+EN8     NA  1   1
+EN9     NA  1   1
+EN10     NA  1   1
+EN11     NA  1   1
+EN12     NA  1   1
+EN13     NA  1   1
+EN14     NA  1   1
+EN15     NA  1   1
+EN16     NA  1   1
+EN17     NA  1   1
+EN18     NA  1   1
+EN19     NA  1   1
+EN20     NA  1   1
+EN21     NA  1   1
+EN22     NA  1   1
+EN23     NA  1   1
+EN24     NA  1   1
+EN25     NA  1   1
+EN26     NA  1   1
+EN27     NA  1   1
+EN28     NA  1   1
+EN29     NA  1   1
+EN30     NA  1   1
+EN31     NA  1   1
+
+
+
+link
+
+
+CN0  CN1    10Gbps    1     10ms    1000
+CN0  CN2    10Gbps    1     10ms    1000
+CN0  CN3    10Gbps    1     10ms    1000
+CN0  CN4    10Gbps    1     10ms    1000
+CN0  CN5    10Gbps    1     10ms    1000
+CN0  CN6    10Gbps    1     10ms    1000
+CN0  EN27    10Gbps    1     10ms    1000
+CN1  CN2    10Gbps    1     10ms    1000
+CN1  CN3    10Gbps    1     10ms    1000
+CN1  CN4    10Gbps    1     10ms    1000
+CN1  CN5    10Gbps    1     10ms    1000
+CN1  EN0    10Gbps    1     10ms    1000
+CN1  8    10Gbps    1     10ms    1000
+CN1  10    10Gbps    1     10ms    1000
+CN1  EN15    10Gbps    1     10ms    1000
+CN2  CN3    10Gbps    1     10ms    1000
+CN2  CN4    10Gbps    1     10ms    1000
+CN2  CN5    10Gbps    1     10ms    1000
+CN2  8    10Gbps    1     10ms    1000
+CN2  9    10Gbps    1     10ms    1000
+CN2  EN4    10Gbps    1     10ms    1000
+CN3  CN4    10Gbps    1     10ms    1000
+CN3  CN5    10Gbps    1     10ms    1000
+CN3  EN16    10Gbps    1     10ms    1000
+CN4  CN5    10Gbps    1     10ms    1000
+CN4  CN6    10Gbps    1     10ms    1000
+CN4  11    10Gbps    1     10ms    1000
+CN4  EN2    10Gbps    1     10ms    1000
+CN5  8    10Gbps    1     10ms    1000
+CN5  9    10Gbps    1     10ms    1000
+CN5  11    10Gbps    1     10ms    1000
+CN5  EN31    10Gbps    1     10ms    1000
+EN0  9    10Gbps    1     10ms    1000
+CN6  11    10Gbps    1     10ms    1000
+CN6  EN12    10Gbps    1     10ms    1000
+CN6  9    10Gbps    1     10ms    1000
+CN6  10    10Gbps    1     10ms    1000
+8  EN4    10Gbps    1     10ms    1000
+8  EN6    10Gbps    1     10ms    1000
+8  EN7    10Gbps    1     10ms    1000
+8  EN10    10Gbps    1     10ms    1000
+8  EN25    10Gbps    1     10ms    1000
+8  EN29    10Gbps    1     10ms    1000
+9  EN11    10Gbps    1     10ms    1000
+9  EN14    10Gbps    1     10ms    1000
+9  EN18    10Gbps    1     10ms    1000
+9  EN19    10Gbps    1     10ms    1000
+9  10    10Gbps    1     10ms    1000
+9  11    10Gbps    1     10ms    1000
+10  EN2    10Gbps    1     10ms    1000
+10  EN8    10Gbps    1     10ms    1000
+10  EN9    10Gbps    1     10ms    1000
+10  EN17    10Gbps    1     10ms    1000
+10  EN20    10Gbps    1     10ms    1000
+10  EN21    10Gbps    1     10ms    1000
+10  EN23    10Gbps    1     10ms    1000
+10  EN24    10Gbps    1     10ms    1000
+10  EN28    10Gbps    1     10ms    1000
+10  EN30    10Gbps    1     10ms    1000
+11  EN13    10Gbps    1     10ms    1000
+11  EN22    10Gbps    1     10ms    1000
+11  EN26    10Gbps    1     10ms    1000

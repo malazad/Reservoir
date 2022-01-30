@@ -1,0 +1,68 @@
+router
+
+
+CN0     NA  1   1
+CN1     NA  1   1
+CN2     NA  1   1
+CN3     NA  1   1
+CN4     NA  1   1
+CN5     NA  1   1
+CN6     NA  1   1
+CN7     NA  1   1
+CN8     NA  1   1
+CN9     NA  1   1
+EN0     NA  1   1
+EN1     NA  1   1
+EN2     NA  1   1
+EN3     NA  1   1
+EN4     NA  1   1
+EN5     NA  1   1
+EN6     NA  1   1
+EN7     NA  1   1
+EN8     NA  1   1
+EN9     NA  1   1
+EN10     NA  1   1
+
+
+
+link
+
+
+CN0  CN1    10Gbps    1     5ms    1000
+CN0  CN2    10Gbps    1     5ms    1000
+CN0  CN3    10Gbps    1     5ms    1000
+CN0  CN4    10Gbps    1     5ms    1000
+CN0  CN5    10Gbps    1     5ms    1000
+CN0  CN7    10Gbps    1     5ms    1000
+CN1  CN2    10Gbps    1     5ms    1000
+CN1  CN3    10Gbps    1     5ms    1000
+CN1  CN4    10Gbps    1     5ms    1000
+CN1  CN5    10Gbps    1     5ms    1000
+CN1  CN6    10Gbps    1     5ms    1000
+CN1  CN8    10Gbps    1     5ms    1000
+CN1  EN0    10Gbps    1     5ms    1000
+CN1  EN6    10Gbps    1     5ms    1000
+CN1  EN10    10Gbps    1     5ms    1000
+CN2  CN3    10Gbps    1     5ms    1000
+CN2  CN4    10Gbps    1     5ms    1000
+CN2  CN5    10Gbps    1     5ms    1000
+CN2  CN8    10Gbps    1     5ms    1000
+CN2  CN9    10Gbps    1     5ms    1000
+CN2  EN9    10Gbps    1     5ms    1000
+CN3  CN4    10Gbps    1     5ms    1000
+CN3  CN5    10Gbps    1     5ms    1000
+CN3  EN1    10Gbps    1     5ms    1000
+CN4  CN5    10Gbps    1     5ms    1000
+CN4  CN7    10Gbps    1     5ms    1000
+CN4  EN7    10Gbps    1     5ms    1000
+CN5  CN8    10Gbps    1     5ms    1000
+CN5  CN9    10Gbps    1     5ms    1000
+CN6  CN9    10Gbps    1     5ms    1000
+CN6  CN8    10Gbps    1     5ms    1000
+CN6  CN7    10Gbps    1     5ms    1000
+CN7  EN3    10Gbps    1     5ms    1000
+CN7  EN5    10Gbps    1     5ms    1000
+CN7  EN8    10Gbps    1     5ms    1000
+CN7  CN8    10Gbps    1     5ms    1000
+CN8  EN2    10Gbps    1     5ms    1000
+CN8  EN4    10Gbps    1     5ms    1000

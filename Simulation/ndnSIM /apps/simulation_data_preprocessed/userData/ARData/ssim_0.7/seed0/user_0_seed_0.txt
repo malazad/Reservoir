@@ -1,0 +1,6 @@
+55,AR_multiple/5/toystorymovVGA_00050.jpg,3589724521,98,endline,
+279,AR_multiple/2/chrisbrownmovVGA_00087.jpg,2512001353,85,endline,
+315,AR_multiple/2/chrisbrownmovVGA_00009.jpg,301619545,81,endline,
+334,AR_multiple/1/barrywhitemovVGA_00066.jpg,364009801,93,AR_multiple/1/barrywhitemovVGA_00072.jpg,5,AR_multiple/1/barrywhitemovVGA_00074.jpg,4,AR_multiple/1/barrywhitemovVGA_00067.jpg,2,AR_multiple/1/barrywhitemovVGA_00069.jpg,5,AR_multiple/1/barrywhitemovVGA_00070.jpg,5,AR_multiple/1/barrywhitemovVGA_00071.jpg,5,AR_multiple/1/barrywhitemovVGA_00068.jpg,4,AR_multiple/1/barrywhitemovVGA_00077.jpg,6,endline,
+339,AR_multiple/1/barrywhitemovVGA_00044.jpg,2515685705,103,AR_multiple/1/barrywhitemovVGA_00048.jpg,4,AR_multiple/1/barrywhitemovVGA_00047.jpg,3,AR_multiple/1/barrywhitemovVGA_00034.jpg,7,AR_multiple/1/barrywhitemovVGA_00045.jpg,3,AR_multiple/1/barrywhitemovVGA_00042.jpg,4,AR_multiple/1/barrywhitemovVGA_00033.jpg,7,AR_multiple/1/barrywhitemovVGA_00046.jpg,4,AR_multiple/1/barrywhitemovVGA_00029.jpg,7,AR_multiple/1/barrywhitemovVGA_00050.jpg,5,AR_multiple/1/barrywhitemovVGA_00049.jpg,4,endline,
+ENDofTXT, ENDofTXT, 

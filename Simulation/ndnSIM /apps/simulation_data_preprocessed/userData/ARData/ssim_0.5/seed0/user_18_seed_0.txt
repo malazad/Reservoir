@@ -1,0 +1,4 @@
+25,AR_multiple/5/toystorymovVGA_00036.jpg,3719483721,89,endline,
+68,AR_multiple/5/toystorymovVGA_00083.jpg,3585333577,111,endline,
+157,AR_multiple/3/titanicmovVGA_00022.jpg,2176272729,131,AR_multiple/3/titanicmovVGA_00027.jpg,5,AR_multiple/3/titanicmovVGA_00021.jpg,4,AR_multiple/3/titanicmovVGA_00028.jpg,6,AR_multiple/3/titanicmovVGA_00024.jpg,5,AR_multiple/3/titanicmovVGA_00023.jpg,4,AR_multiple/3/titanicmovVGA_00030.jpg,8,AR_multiple/3/titanicmovVGA_00025.jpg,5,endline,
+ENDofTXT, ENDofTXT, 

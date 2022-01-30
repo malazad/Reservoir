@@ -1,0 +1,3 @@
+252,AR_multiple/2/chrisbrownmovVGA_00095.jpg,2512279881,83,endline,
+255,AR_multiple/2/chrisbrownmovVGA_00028.jpg,3518658889,82,endline,
+ENDofTXT, ENDofTXT, 

@@ -1,0 +1,3 @@
+23,AR_multiple/5/toystorymovVGA_00054.jpg,2509429065,99,endline,
+50,AR_multiple/5/toystorymovVGA_00099.jpg,2444679497,108,endline,
+ENDofTXT, ENDofTXT, 

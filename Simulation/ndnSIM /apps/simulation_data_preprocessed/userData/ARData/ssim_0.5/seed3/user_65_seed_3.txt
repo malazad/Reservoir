@@ -1,0 +1,4 @@
+289,AR_multiple/2/chrisbrownmovVGA_00042.jpg,3585759561,82,endline,
+313,AR_multiple/2/chrisbrownmovVGA_00004.jpg,435837305,81,endline,
+380,AR_multiple/1/barrywhitemovVGA_00012.jpg,2515718473,105,AR_multiple/1/barrywhitemovVGA_00015.jpg,3,AR_multiple/1/barrywhitemovVGA_00031.jpg,6,AR_multiple/1/barrywhitemovVGA_00030.jpg,6,AR_multiple/1/barrywhitemovVGA_00038.jpg,7,endline,
+ENDofTXT, ENDofTXT, 

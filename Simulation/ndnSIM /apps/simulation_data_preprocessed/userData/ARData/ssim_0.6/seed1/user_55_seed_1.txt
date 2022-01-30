@@ -1,0 +1,4 @@
+18,AR_multiple/5/toystorymovVGA_00024.jpg,364302425,90,endline,
+228,AR_multiple/4/titanicmovsecVGA_00096.jpg,100014937,101,endline,
+296,AR_multiple/2/chrisbrownmovVGA_00023.jpg,2645719385,81,endline,
+ENDofTXT, ENDofTXT, 

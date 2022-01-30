@@ -1,0 +1,6 @@
+77,AR_multiple/5/toystorymovVGA_00087.jpg,2444417353,112,endline,
+87,AR_multiple/3/titanicmovVGA_00029.jpg,2444708185,132,endline,
+198,AR_multiple/4/titanicmovsecVGA_00100.jpg,2509674841,102,endline,
+301,AR_multiple/2/chrisbrownmovVGA_00075.jpg,2449164617,84,endline,
+368,AR_multiple/1/barrywhitemovVGA_00089.jpg,2511526217,93,AR_multiple/1/barrywhitemovVGA_00060.jpg,9,AR_multiple/1/barrywhitemovVGA_00063.jpg,9,AR_multiple/1/barrywhitemovVGA_00062.jpg,9,endline,
+ENDofTXT, ENDofTXT, 

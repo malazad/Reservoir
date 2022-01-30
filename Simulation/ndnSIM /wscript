@@ -1,0 +1,223 @@
+## -*- Mode: python; py-indent-offset: 4; indent-tabs-mode: nil; coding: utf-8; -*-
+
+import os
+from waflib import Logs, Utils, Options, TaskGen, Task
+from waflib.Errors import WafError
+
+import wutils
+
+REQUIRED_BOOST_LIBS = ['graph', 'thread', 'unit_test_framework',
+                       'system', 'random', 'date_time', 'iostreams', 'regex',
+                       'program_options', 'chrono', 'filesystem']
+
+top = '../..'
+
+def required_boost_libs(conf):
+    conf.env.REQUIRED_BOOST_LIBS += REQUIRED_BOOST_LIBS
+
+def options(opt):
+    opt.load(['version'], tooldir=['%s/.waf-tools' % opt.path.abspath()])
+    opt.load(['doxygen', 'sphinx_build', 'compiler-features', 'sqlite3', 'openssl'],
+             tooldir=['%s/ndn-cxx/.waf-tools' % opt.path.abspath()])
+
+def configure(conf):
+    conf.load(['doxygen', 'sphinx_build', 'compiler-features', 'version', 'sqlite3', 'openssl'])
+
+    conf.env['ENABLE_NDNSIM']=False
+
+    if 'PKG_CONFIG_PATH' not in os.environ:
+        os.environ['PKG_CONFIG_PATH'] = Utils.subst_vars('${LIBDIR}/pkgconfig', conf.env)
+
+    conf.check_cxx(lib='pthread', uselib_store='PTHREAD', define_name='HAVE_PTHREAD', mandatory=False)
+    conf.check_sqlite3(mandatory=True)
+    conf.check_openssl(mandatory=True, use='OPENSSL', atleast_version=0x10001000)
+
+    if not conf.env['LIB_BOOST']:
+        conf.report_optional_feature("ndnSIM", "ndnSIM", False,
+                                     "Required boost libraries not found")
+        Logs.error ("ndnSIM will not be built as it requires boost libraries of version at least 1.54.0")
+        conf.env['MODULES_NOT_BUILT'].append('ndnSIM')
+        return
+    else:
+        present_boost_libs = []
+        for boost_lib_name in conf.env['LIB_BOOST']:
+            if boost_lib_name.startswith("boost_"):
+                boost_lib_name = boost_lib_name[6:]
+            if boost_lib_name.endswith("-mt"):
+                boost_lib_name = boost_lib_name[:-3]
+            present_boost_libs.append(boost_lib_name)
+
+        missing_boost_libs = [lib for lib in REQUIRED_BOOST_LIBS if lib not in present_boost_libs]
+
+        if missing_boost_libs != []:
+            conf.report_optional_feature("ndnSIM", "ndnSIM", False,
+                                         "ndnSIM requires boost libraries: %s" % ' '.join(missing_boost_libs))
+            conf.env['MODULES_NOT_BUILT'].append('ndnSIM')
+
+            Logs.error ("ndnSIM will not be build as it requires boost libraries: %s" % ' '.join(missing_boost_libs))
+            Logs.error ("Please upgrade your distribution or install custom boost libraries (http://ndnsim.net/faq.html#boost-libraries)")
+            return
+
+        boost_version = conf.env.BOOST_VERSION.split('_')
+        if int(boost_version[0]) < 1 or int(boost_version[1]) < 54:
+            conf.report_optional_feature("ndnSIM", "ndnSIM", False,
+                                         "ndnSIM requires at least boost version 1.54")
+            conf.env['MODULES_NOT_BUILT'].append('ndnSIM')
+
+            Logs.error ("ndnSIM will not be build as it requires boost libraries of version at least 1.54")
+            Logs.error ("Please upgrade your distribution or install custom boost libraries (http://ndnsim.net/faq.html#boost-libraries)")
+            return
+
+    conf.env['ENABLE_NDNSIM']=True;
+    conf.env['MODULES_BUILT'].append('ndnSIM')
+
+    conf.report_optional_feature("ndnSIM", "ndnSIM", True, "")
+
+    conf.write_config_header('../../ns3/ndnSIM/ndn-cxx/detail/config.hpp', define_prefix='NDN_CXX_', remove=False)
+    conf.write_config_header('../../ns3/ndnSIM/NFD/core/config.hpp', remove=False)
+
+def build(bld):
+    (base, build, split) = bld.getVersion('NFD')
+    bld(features="subst",
+        name="version-NFD",
+        source='NFD/core/version.hpp.in', target='../../ns3/ndnSIM/NFD/core/version.hpp',
+        install_path=None,
+        VERSION_STRING=base,
+        VERSION_BUILD="%s-ndnSIM" % build,
+        VERSION=int(split[0]) * 1000000 + int(split[1]) * 1000 + int(split[2]),
+        VERSION_MAJOR=split[0], VERSION_MINOR=split[1], VERSION_PATCH=split[2])
+
+    bld(features="subst",
+        name="versioncpp-NFD",
+        source='NFD/core/version.cpp.in', target=bld.path.find_or_declare('NFD/core/version.cpp'),
+        install_path=None,
+        VERSION_STRING=base,
+        VERSION_BUILD="%s-ndnSIM" % build,
+        VERSION=int(split[0]) * 1000000 + int(split[1]) * 1000 + int(split[2]),
+        VERSION_MAJOR=split[0], VERSION_MINOR=split[1], VERSION_PATCH=split[2])
+
+    bld.objects(
+        features="cxx",
+        target='version-NFD-objects',
+        source='NFD/core/version.cpp',
+        includes='../../ns3/ndnSIM/NFD',
+        use='version-NFD versioncpp-NFD')
+
+    (base, build, split) = bld.getVersion('ndn-cxx')
+    bld(features="subst",
+        name="version-ndn-cxx",
+        source='ndn-cxx/ndn-cxx/version.hpp.in', target='../../ns3/ndnSIM/ndn-cxx/version.hpp',
+        install_path=None,
+        VERSION_STRING=base,
+        VERSION_BUILD="%s-ndnSIM" % build,
+        VERSION=int(split[0]) * 1000000 + int(split[1]) * 1000 + int(split[2]),
+        VERSION_MAJOR=split[0], VERSION_MINOR=split[1], VERSION_PATCH=split[2])
+
+    deps = ['core', 'network', 'point-to-point', 'topology-read', 'mobility', 'internet']
+    if 'ns3-visualizer' in bld.env['NS3_ENABLED_MODULES']:
+        deps.append('visualizer')
+
+    if bld.env.ENABLE_EXAMPLES:
+        deps += ['point-to-point-layout', 'csma', 'applications', 'wifi']
+
+    ndnCxxSrc = bld.path.ant_glob('ndn-cxx/ndn-cxx/**/*.cpp',
+                                  excl=['ndn-cxx/ndn-cxx/net/impl/*.cpp',
+                                        'ndn-cxx/ndn-cxx/net/network-monitor*.cpp',
+                                        'ndn-cxx/ndn-cxx/util/dummy-client-face.cpp',
+                                        'ndn-cxx/ndn-cxx/**/*osx.cpp',
+                                        'ndn-cxx/ndn-cxx/net/network-interface.cpp'])
+
+    nfdSrc = bld.path.ant_glob(['%s/**/*.cpp' % dir for dir in ['NFD/core', 'NFD/daemon']],
+                               excl=['NFD/daemon/main.cpp',
+                                     'NFD/daemon/nfd.cpp',
+                                     'NFD/daemon/face/*ethernet*',
+                                     'NFD/daemon/face/*pcap*.cpp',
+                                     'NFD/daemon/face/tcp*',
+                                     'NFD/daemon/face/*udp*',
+                                     'NFD/daemon/face/unix-stream*',
+                                     'NFD/daemon/face/websocket*'])
+
+    module = bld.create_ns3_module('ndnSIM', deps)
+    module.module = 'ndnSIM'
+    module.features += ' ns3fullmoduleheaders ndncxxheaders'
+    module.use += ['version-ndn-cxx', 'version-NFD-objects', 'BOOST', 'SQLITE3', 'RT', 'PTHREAD', 'OPENSSL']
+    module.includes = ['../..', '../../ns3/ndnSIM/NFD', './NFD/core', './NFD/daemon', './NFD/rib', '../../ns3/ndnSIM', '../../ns3/ndnSIM/ndn-cxx']
+    module.export_includes = ['../../ns3/ndnSIM/NFD', './NFD/core', './NFD/daemon', './NFD/rib', '../../ns3/ndnSIM']
+    if 'ns3-visualizer' in bld.env['NS3_ENABLED_MODULES']:
+        module.defines = ['HAVE_NS3_VISUALIZER=1']
+
+    headers = bld(features='ns3header')
+    headers.module = 'ndnSIM'
+    headers.source = ["ndn-all.hpp"]
+
+    if not bld.env['ENABLE_NDNSIM']:
+        bld.env['MODULES_NOT_BUILT'].append('ndnSIM')
+        return
+
+    module_dirs = ['apps', 'helper', 'model', 'utils', 'bindings']
+    module.source = bld.path.ant_glob(['%s/**/*.cpp' % dir for dir in module_dirs],
+                                      excl=[
+                                          'model/ip-faces/*']) + ndnCxxSrc + nfdSrc
+
+    module_dirs = ['NFD/core', 'NFD/daemon', 'apps', 'helper', 'model', 'utils', 'bindings']
+    module.full_headers = bld.path.ant_glob(['%s/**/*.hpp' % dir for dir in module_dirs])
+    module.full_headers += bld.path.ant_glob('NFD/common.hpp')
+
+    module.ndncxx_headers = bld.path.ant_glob(['ndn-cxx/ndn-cxx/**/*.hpp'],
+                                              excl=['src/**/*-osx.hpp', 'src/impl/**/*'])
+
+    if bld.env.ENABLE_EXAMPLES:
+        bld.recurse('examples')
+
+    if bld.env.ENABLE_TESTS:
+        bld.recurse('tests')
+
+    bld.ns3_python_bindings()
+
+@TaskGen.feature('ns3fullmoduleheaders')
+@TaskGen.after_method('process_rule')
+def apply_ns3fullmoduleheaders(self):
+    # ## get all of the ns3 headers
+    ns3_dir_node = self.bld.path.find_or_declare("ns3")
+
+    mode = getattr(self, "mode", "install")
+
+    for src_node in set(self.full_headers):
+        dst_node = ns3_dir_node.find_or_declare(src_node.path_from(self.bld.path.find_dir('src')))
+        assert dst_node is not None
+
+        relpath = src_node.parent.path_from(self.bld.path.find_dir('src'))
+
+        task = self.create_task('ns3header')
+        task.mode = getattr(self, 'mode', 'install')
+        if task.mode == 'install':
+            self.bld.install_files('${INCLUDEDIR}/%s%s/ns3/%s' % (wutils.APPNAME, wutils.VERSION, relpath),
+                                   [src_node])
+            task.set_inputs([src_node])
+            task.set_outputs([dst_node])
+        else:
+            task.header_to_remove = dst_node
+
+@TaskGen.feature('ndncxxheaders')
+@TaskGen.after_method('process_rule')
+def apply_ndnsim_moduleheaders(self):
+    # ## get all of the ns3 headers
+    ndncxx_dir_node = self.bld.path.find_or_declare("ns3/ndnSIM/ndn-cxx")
+
+    mode = getattr(self, "mode", "install")
+
+    for src_node in set(self.ndncxx_headers):
+        dst_node = ndncxx_dir_node.find_or_declare(src_node.path_from(self.bld.path.find_dir('src/ndnSIM/ndn-cxx/ndn-cxx')))
+        assert dst_node is not None
+
+        relpath = src_node.parent.path_from(self.bld.path.find_dir('src/ndnSIM/ndn-cxx/ndn-cxx'))
+
+        task = self.create_task('ns3header')
+        task.mode = getattr(self, 'mode', 'install')
+        if task.mode == 'install':
+            self.bld.install_files('${INCLUDEDIR}/%s%s/ns3/ndnSIM/ndn-cxx/%s' % (wutils.APPNAME, wutils.VERSION, relpath),
+                                   [src_node])
+            task.set_inputs([src_node])
+            task.set_outputs([dst_node])
+        else:
+            task.header_to_remove = dst_node

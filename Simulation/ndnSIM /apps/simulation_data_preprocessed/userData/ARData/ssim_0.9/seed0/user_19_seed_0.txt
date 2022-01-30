@@ -1,0 +1,4 @@
+111,AR_multiple/3/titanicmovVGA_00008.jpg,2175994205,131,AR_multiple/3/titanicmovVGA_00009.jpg,3,AR_multiple/3/titanicmovVGA_00010.jpg,5,endline,
+247,AR_multiple/2/chrisbrownmovVGA_00029.jpg,3522320713,82,endline,
+370,AR_multiple/1/barrywhitemovVGA_00023.jpg,2515687753,104,AR_multiple/1/barrywhitemovVGA_00017.jpg,4,endline,
+ENDofTXT, ENDofTXT, 

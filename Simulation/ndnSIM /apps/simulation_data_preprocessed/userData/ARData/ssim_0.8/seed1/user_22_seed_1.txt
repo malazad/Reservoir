@@ -1,0 +1,3 @@
+90,AR_multiple/3/titanicmovVGA_00047.jpg,3585231193,127,endline,
+174,AR_multiple/4/titanicmovsecVGA_00054.jpg,1405010265,88,endline,
+ENDofTXT, ENDofTXT, 

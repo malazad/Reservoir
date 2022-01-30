@@ -1,0 +1,5 @@
+306,AR_multiple/2/chrisbrownmovVGA_00015.jpg,1438275929,80,endline,
+354,AR_multiple/1/barrywhitemovVGA_00009.jpg,2515685705,105,AR_multiple/1/barrywhitemovVGA_00004.jpg,4,AR_multiple/1/barrywhitemovVGA_00007.jpg,3,AR_multiple/1/barrywhitemovVGA_00008.jpg,2,AR_multiple/1/barrywhitemovVGA_00034.jpg,7,AR_multiple/1/barrywhitemovVGA_00042.jpg,8,AR_multiple/1/barrywhitemovVGA_00005.jpg,4,AR_multiple/1/barrywhitemovVGA_00033.jpg,7,AR_multiple/1/barrywhitemovVGA_00029.jpg,6,AR_multiple/1/barrywhitemovVGA_00010.jpg,2,endline,
+356,AR_multiple/1/barrywhitemovVGA_00025.jpg,2515982665,104,AR_multiple/1/barrywhitemovVGA_00001.jpg,7,endline,
+357,AR_multiple/1/barrywhitemovVGA_00069.jpg,364009801,94,AR_multiple/1/barrywhitemovVGA_00072.jpg,3,AR_multiple/1/barrywhitemovVGA_00066.jpg,5,AR_multiple/1/barrywhitemovVGA_00074.jpg,5,AR_multiple/1/barrywhitemovVGA_00067.jpg,4,AR_multiple/1/barrywhitemovVGA_00070.jpg,2,AR_multiple/1/barrywhitemovVGA_00071.jpg,2,AR_multiple/1/barrywhitemovVGA_00068.jpg,4,AR_multiple/1/barrywhitemovVGA_00077.jpg,6,endline,
+ENDofTXT, ENDofTXT, 

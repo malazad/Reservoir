@@ -1,0 +1,6 @@
+227,AR_multiple/4/titanicmovsecVGA_00017.jpg,2511493457,101,AR_multiple/4/titanicmovsecVGA_00022.jpg,10,AR_multiple/4/titanicmovsecVGA_00021.jpg,9,endline,
+243,AR_multiple/2/chrisbrownmovVGA_00080.jpg,1442531657,85,endline,
+254,AR_multiple/2/chrisbrownmovVGA_00049.jpg,2511489353,84,endline,
+293,AR_multiple/2/chrisbrownmovVGA_00018.jpg,3585235289,81,AR_multiple/2/chrisbrownmovVGA_00016.jpg,6,AR_multiple/2/chrisbrownmovVGA_00021.jpg,7,AR_multiple/2/chrisbrownmovVGA_00020.jpg,6,AR_multiple/2/chrisbrownmovVGA_00019.jpg,3,endline,
+341,AR_multiple/1/barrywhitemovVGA_00015.jpg,2515718473,104,AR_multiple/1/barrywhitemovVGA_00012.jpg,3,AR_multiple/1/barrywhitemovVGA_00031.jpg,6,AR_multiple/1/barrywhitemovVGA_00030.jpg,6,AR_multiple/1/barrywhitemovVGA_00038.jpg,7,endline,
+ENDofTXT, ENDofTXT, 

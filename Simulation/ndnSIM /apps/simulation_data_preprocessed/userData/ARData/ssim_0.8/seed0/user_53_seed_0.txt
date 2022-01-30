@@ -1,0 +1,8 @@
+3,AR_multiple/5/toystorymovVGA_00084.jpg,3585268041,111,AR_multiple/5/toystorymovVGA_00085.jpg,4,endline,
+126,AR_multiple/3/titanicmovVGA_00015.jpg,3250014553,131,AR_multiple/3/titanicmovVGA_00013.jpg,5,endline,
+276,AR_multiple/2/chrisbrownmovVGA_00007.jpg,1375361401,81,endline,
+293,AR_multiple/2/chrisbrownmovVGA_00018.jpg,3585235289,81,AR_multiple/2/chrisbrownmovVGA_00016.jpg,6,AR_multiple/2/chrisbrownmovVGA_00021.jpg,7,AR_multiple/2/chrisbrownmovVGA_00020.jpg,6,AR_multiple/2/chrisbrownmovVGA_00019.jpg,3,endline,
+298,AR_multiple/2/chrisbrownmovVGA_00039.jpg,3652344137,83,endline,
+322,AR_multiple/1/barrywhitemovVGA_00083.jpg,2512050521,94,endline,
+332,AR_multiple/1/barrywhitemovVGA_00088.jpg,364566857,93,AR_multiple/1/barrywhitemovVGA_00079.jpg,7,endline,
+ENDofTXT, ENDofTXT, 
