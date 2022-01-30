@@ -1,3 +1,6 @@
+This is the code used for the following publication: **Md W. Al Azad and S. Mastorakis, “Reservoir: Named Data for Pervasive Computation Reuse at the Network
+Edge,” IEEE International Conference on Pervasive Computing and Communications (PerCom), 2022.**
+
 # Reservoir
 
 
